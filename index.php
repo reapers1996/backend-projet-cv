@@ -38,11 +38,11 @@ function router()
                     echo json_encode(getAll($db));
                     break;
                 case "academicDegree":
-                    require_once "./academicDegreeController.php";
+                    require_once "./academic-degree-controller.php";
                     echo json_encode(get($db, $id));
                     break;
                 case "academicDegrees":
-                    require_once "./academicDegreeController.php";
+                    require_once "./academic-degree-controller.php";
                     echo json_encode(getAll($db));
                     break;
                 case "hobby":
@@ -79,11 +79,11 @@ function router()
                     echo json_encode(update($db, $id));
                     break;
                 case "insert-academicDegree":
-                    require_once "./academicDegreeController.php";
+                    require_once "./academic-degree-controller.php";
                     echo json_encode(insert($db));
                     break;
                 case "update-academicDegree":
-                    require_once "./academicDegreeController.php";
+                    require_once "./academic-degree-controller.php";
                     echo json_encode(update($db, $id));
                     break;
                 case "insert-hobby":
@@ -102,6 +102,24 @@ function router()
                     require_once "./skill-controller.php";
                     echo json_encode(update($db, $id));
                     break;
+
+                case "delete-experience":
+                    require_once "./experience-controller.php";
+                    echo json_encode(delete($db, $id));
+                    break;
+                case "delete-academicDegree":
+                    require_once "./academic-degree-controller.php";
+                    echo json_encode(delete($db, $id));
+                    break;
+                case "delete-hobby":
+                    require_once "./hobby-controller.php";
+                    echo json_encode(delete($db, $id));
+                    break;
+                case "delete-skill":
+                    require_once "./skill-controller.php";
+                    echo json_encode(delete($db, $id));
+                    break;
+
             }
             break;
     }
